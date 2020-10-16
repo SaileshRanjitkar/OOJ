@@ -1,0 +1,66 @@
+import java.lang.*;
+import java.io.*;
+ 
+class Student {
+ 
+ String name;
+ String usn_no;
+ int cred1,cred2,cred3;
+ Double grade1,grade2,grade3;
+ 
+ void getdata() throws IOException {
+  
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  System.out.println ("Enter Student's Name Here");
+  name = br.readLine();
+  
+  System.out.println ("Enter Student's USN");
+  usn_no = br.readLine();
+  
+  System.out.println ("Enter credit points of 1st subject");
+  cred1 = Integer.parseInt(br.readLine());
+  
+  System.out.println ("Enter credit points of 2nd subject");
+  cred2 = Integer.parseInt(br.readLine());
+  
+  System.out.println ("Enter credit points of 3rd subject");
+  cred3 = Integer.parseInt(br.readLine());
+  
+   System.out.println ("Enter grade points of 1st subject");
+  grade1 = Double.parseDouble(br.readLine());
+  
+  System.out.println ("Enter grade points of 2nd subject");
+  grade2 = Double.parseDouble(br.readLine());
+  
+  System.out.println ("Enter grade points of 3rd subject");
+  grade3 = Double.parseDouble(br.readLine());
+ }
+ 
+ void show() {
+  
+ 
+  Double sgpa = ((cred1*grade1)+(cred2*grade2)+(cred3*grade3))/(cred1+cred2+cred3);
+ 
+  System.out.println ("USN = "+usn_no);
+  System.out.println ("Name = "+name);
+  System.out.println ("credit points of 1st Subject = "+cred1);
+  System.out.println ("credit points of 2nd Subject = "+cred2);
+  System.out.println ("credit points of 3rd Subject = "+cred3);
+  System.out.println ("grade points of 1st Subject = "+grade1);
+  System.out.println ("grade points of 2nd Subject = "+grade2);
+  System.out.println ("grade points of 3rd Subject = "+grade3);
+  
+
+  System.out.println ("SGPA = "+sgpa);
+ }
+}
+ 
+public class StudentInfo {
+ 
+ public static void main(String[] args) throws IOException {
+  
+  Student s=new Student();
+  s.getdata();
+  s.show();
+ }
+}
